@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A99759A11611C35A00BFB780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759A01611C35A00BFB780 /* Foundation.framework */; };
+		A99759B41611C39800BFB780 /* FWTOverlayScrollViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759AF1611C39800BFB780 /* FWTOverlayScrollViewHelper.m */; };
+		A99759B51611C39800BFB780 /* UIScrollView+FWTOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759B11611C39800BFB780 /* UIScrollView+FWTOverlayView.m */; };
+		A99759B61611C39800BFB780 /* UITableView+FWTOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759B31611C39800BFB780 /* UITableView+FWTOverlayView.m */; };
+		A99759BA1611C3F300BFB780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759B91611C3F300BFB780 /* UIKit.framework */; };
+		A99759BC1611C3F800BFB780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759BB1611C3F800BFB780 /* CoreGraphics.framework */; };
+		A99759BE1611C42100BFB780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759BD1611C42100BFB780 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A997599B1611C35A00BFB780 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A997599D1611C35A00BFB780 /* libFWTOverlayView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFWTOverlayView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99759A01611C35A00BFB780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A99759A41611C35A00BFB780 /* FWTOverlayView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTOverlayView-Prefix.pch"; sourceTree = "<group>"; };
+		A99759AE1611C39800BFB780 /* FWTOverlayScrollViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTOverlayScrollViewHelper.h; sourceTree = "<group>"; };
+		A99759AF1611C39800BFB780 /* FWTOverlayScrollViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTOverlayScrollViewHelper.m; sourceTree = "<group>"; };
+		A99759B01611C39800BFB780 /* UIScrollView+FWTOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FWTOverlayView.h"; sourceTree = "<group>"; };
+		A99759B11611C39800BFB780 /* UIScrollView+FWTOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FWTOverlayView.m"; sourceTree = "<group>"; };
+		A99759B21611C39800BFB780 /* UITableView+FWTOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FWTOverlayView.h"; sourceTree = "<group>"; };
+		A99759B31611C39800BFB780 /* UITableView+FWTOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FWTOverlayView.m"; sourceTree = "<group>"; };
+		A99759B91611C3F300BFB780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A99759BB1611C3F800BFB780 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A99759BD1611C42100BFB780 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A997599A1611C35A00BFB780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99759BE1611C42100BFB780 /* QuartzCore.framework in Frameworks */,
+				A99759BC1611C3F800BFB780 /* CoreGraphics.framework in Frameworks */,
+				A99759BA1611C3F300BFB780 /* UIKit.framework in Frameworks */,
+				A99759A11611C35A00BFB780 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A99759921611C35A00BFB780 = {
+			isa = PBXGroup;
+			children = (
+				A99759A21611C35A00BFB780 /* FWTOverlayView */,
+				A997599F1611C35A00BFB780 /* Frameworks */,
+				A997599E1611C35A00BFB780 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A997599E1611C35A00BFB780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A997599D1611C35A00BFB780 /* libFWTOverlayView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A997599F1611C35A00BFB780 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99759BD1611C42100BFB780 /* QuartzCore.framework */,
+				A99759BB1611C3F800BFB780 /* CoreGraphics.framework */,
+				A99759B91611C3F300BFB780 /* UIKit.framework */,
+				A99759A01611C35A00BFB780 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A99759A21611C35A00BFB780 /* FWTOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				A99759B71611C3A500BFB780 /* ScrollView */,
+				A99759A31611C35A00BFB780 /* Supporting Files */,
+			);
+			path = FWTOverlayView;
+			sourceTree = "<group>";
+		};
+		A99759A31611C35A00BFB780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A99759A41611C35A00BFB780 /* FWTOverlayView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A99759B71611C3A500BFB780 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A99759B81611C3B300BFB780 /* Private */,
+				A99759B01611C39800BFB780 /* UIScrollView+FWTOverlayView.h */,
+				A99759B11611C39800BFB780 /* UIScrollView+FWTOverlayView.m */,
+				A99759B21611C39800BFB780 /* UITableView+FWTOverlayView.h */,
+				A99759B31611C39800BFB780 /* UITableView+FWTOverlayView.m */,
+			);
+			name = ScrollView;
+			sourceTree = "<group>";
+		};
+		A99759B81611C3B300BFB780 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				A99759AE1611C39800BFB780 /* FWTOverlayScrollViewHelper.h */,
+				A99759AF1611C39800BFB780 /* FWTOverlayScrollViewHelper.m */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A997599C1611C35A00BFB780 /* FWTOverlayView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A99759AB1611C35A00BFB780 /* Build configuration list for PBXNativeTarget "FWTOverlayView" */;
+			buildPhases = (
+				A99759991611C35A00BFB780 /* Sources */,
+				A997599A1611C35A00BFB780 /* Frameworks */,
+				A997599B1611C35A00BFB780 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWTOverlayView;
+			productName = FWTOverlayView;
+			productReference = A997599D1611C35A00BFB780 /* libFWTOverlayView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A99759941611C35A00BFB780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Marco Meschini";
+			};
+			buildConfigurationList = A99759971611C35A00BFB780 /* Build configuration list for PBXProject "FWTOverlayView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A99759921611C35A00BFB780;
+			productRefGroup = A997599E1611C35A00BFB780 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A997599C1611C35A00BFB780 /* FWTOverlayView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A99759991611C35A00BFB780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99759B41611C39800BFB780 /* FWTOverlayScrollViewHelper.m in Sources */,
+				A99759B51611C39800BFB780 /* UIScrollView+FWTOverlayView.m in Sources */,
+				A99759B61611C39800BFB780 /* UITableView+FWTOverlayView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A99759A91611C35A00BFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A99759AA1611C35A00BFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A99759AC1611C35A00BFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FWTOverlayView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTOverlayView/FWTOverlayView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A99759AD1611C35A00BFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FWTOverlayView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTOverlayView/FWTOverlayView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A99759971611C35A00BFB780 /* Build configuration list for PBXProject "FWTOverlayView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99759A91611C35A00BFB780 /* Debug */,
+				A99759AA1611C35A00BFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A99759AB1611C35A00BFB780 /* Build configuration list for PBXNativeTarget "FWTOverlayView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99759AC1611C35A00BFB780 /* Debug */,
+				A99759AD1611C35A00BFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A99759941611C35A00BFB780 /* Project object */;
+}

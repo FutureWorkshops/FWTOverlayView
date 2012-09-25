@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FWTOverlayView' target in the 'FWTOverlayView' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

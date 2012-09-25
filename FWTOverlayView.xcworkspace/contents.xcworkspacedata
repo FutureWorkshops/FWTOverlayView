@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:FWTOverlayView/FWTOverlayView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FWTOverlayView_Test/FWTOverlayView_Test.xcodeproj">
+   </FileRef>
+</Workspace>

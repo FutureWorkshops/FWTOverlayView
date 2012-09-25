@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A99759CF1611C48200BFB780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759CE1611C48200BFB780 /* UIKit.framework */; };
+		A99759D11611C48200BFB780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D01611C48200BFB780 /* Foundation.framework */; };
+		A99759D31611C48200BFB780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D21611C48200BFB780 /* CoreGraphics.framework */; };
+		A99759D91611C48200BFB780 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A99759D71611C48200BFB780 /* InfoPlist.strings */; };
+		A99759DB1611C48200BFB780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759DA1611C48200BFB780 /* main.m */; };
+		A99759DF1611C48200BFB780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759DE1611C48200BFB780 /* AppDelegate.m */; };
+		A99759E11611C48200BFB780 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E01611C48200BFB780 /* Default.png */; };
+		A99759E31611C48200BFB780 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E21611C48200BFB780 /* Default@2x.png */; };
+		A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E41611C48200BFB780 /* Default-568h@2x.png */; };
+		A99759EC1611C49500BFB780 /* libFWTOverlayView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759EB1611C49500BFB780 /* libFWTOverlayView.a */; };
+		A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */; };
+		A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F11611C5EC00BFB780 /* TableViewController.m */; };
+		A99759F51611C6B100BFB780 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F41611C6B100BFB780 /* OverlayView.m */; };
+		A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759F61611C6C100BFB780 /* QuartzCore.framework */; };
+		A99759FA1611C99200BFB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F91611C99200BFB780 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTOverlayView_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99759CE1611C48200BFB780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A99759D01611C48200BFB780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A99759D21611C48200BFB780 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A99759D61611C48200BFB780 /* FWTOverlayView_Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FWTOverlayView_Test-Info.plist"; sourceTree = "<group>"; };
+		A99759D81611C48200BFB780 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A99759DA1611C48200BFB780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A99759DC1611C48200BFB780 /* FWTOverlayView_Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTOverlayView_Test-Prefix.pch"; sourceTree = "<group>"; };
+		A99759DD1611C48200BFB780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A99759DE1611C48200BFB780 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A99759E01611C48200BFB780 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A99759E21611C48200BFB780 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A99759E41611C48200BFB780 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A99759EB1611C49500BFB780 /* libFWTOverlayView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFWTOverlayView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePickerViewController.h; sourceTree = "<group>"; };
+		A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePickerViewController.m; sourceTree = "<group>"; };
+		A99759F01611C5EC00BFB780 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		A99759F11611C5EC00BFB780 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		A99759F31611C6B100BFB780 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		A99759F41611C6B100BFB780 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		A99759F61611C6C100BFB780 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A99759F81611C99200BFB780 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A99759F91611C99200BFB780 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A99759C71611C48200BFB780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */,
+				A99759EC1611C49500BFB780 /* libFWTOverlayView.a in Frameworks */,
+				A99759CF1611C48200BFB780 /* UIKit.framework in Frameworks */,
+				A99759D11611C48200BFB780 /* Foundation.framework in Frameworks */,
+				A99759D31611C48200BFB780 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A99759BF1611C48200BFB780 = {
+			isa = PBXGroup;
+			children = (
+				A99759D41611C48200BFB780 /* FWTOverlayView_Test */,
+				A99759CD1611C48200BFB780 /* Frameworks */,
+				A99759CB1611C48200BFB780 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A99759CB1611C48200BFB780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A99759CD1611C48200BFB780 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99759EB1611C49500BFB780 /* libFWTOverlayView.a */,
+				A99759F61611C6C100BFB780 /* QuartzCore.framework */,
+				A99759CE1611C48200BFB780 /* UIKit.framework */,
+				A99759D01611C48200BFB780 /* Foundation.framework */,
+				A99759D21611C48200BFB780 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A99759D41611C48200BFB780 /* FWTOverlayView_Test */ = {
+			isa = PBXGroup;
+			children = (
+				A99759DD1611C48200BFB780 /* AppDelegate.h */,
+				A99759DE1611C48200BFB780 /* AppDelegate.m */,
+				A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */,
+				A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */,
+				A9975A0C1611E9D200BFB780 /* Sample */,
+				A99759D51611C48200BFB780 /* Supporting Files */,
+			);
+			path = FWTOverlayView_Test;
+			sourceTree = "<group>";
+		};
+		A99759D51611C48200BFB780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A99759D61611C48200BFB780 /* FWTOverlayView_Test-Info.plist */,
+				A99759D71611C48200BFB780 /* InfoPlist.strings */,
+				A99759DA1611C48200BFB780 /* main.m */,
+				A99759DC1611C48200BFB780 /* FWTOverlayView_Test-Prefix.pch */,
+				A99759E01611C48200BFB780 /* Default.png */,
+				A99759E21611C48200BFB780 /* Default@2x.png */,
+				A99759E41611C48200BFB780 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9975A0C1611E9D200BFB780 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				A99759F81611C99200BFB780 /* ViewController.h */,
+				A99759F91611C99200BFB780 /* ViewController.m */,
+				A99759F01611C5EC00BFB780 /* TableViewController.h */,
+				A99759F11611C5EC00BFB780 /* TableViewController.m */,
+				A99759F31611C6B100BFB780 /* OverlayView.h */,
+				A99759F41611C6B100BFB780 /* OverlayView.m */,
+			);
+			name = Sample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A99759C91611C48200BFB780 /* FWTOverlayView_Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A99759E81611C48200BFB780 /* Build configuration list for PBXNativeTarget "FWTOverlayView_Test" */;
+			buildPhases = (
+				A99759C61611C48200BFB780 /* Sources */,
+				A99759C71611C48200BFB780 /* Frameworks */,
+				A99759C81611C48200BFB780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FWTOverlayView_Test;
+			productName = FWTOverlayView_Test;
+			productReference = A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A99759C11611C48200BFB780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Marco Meschini";
+			};
+			buildConfigurationList = A99759C41611C48200BFB780 /* Build configuration list for PBXProject "FWTOverlayView_Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A99759BF1611C48200BFB780;
+			productRefGroup = A99759CB1611C48200BFB780 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A99759C91611C48200BFB780 /* FWTOverlayView_Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A99759C81611C48200BFB780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99759D91611C48200BFB780 /* InfoPlist.strings in Resources */,
+				A99759E11611C48200BFB780 /* Default.png in Resources */,
+				A99759E31611C48200BFB780 /* Default@2x.png in Resources */,
+				A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A99759C61611C48200BFB780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99759DB1611C48200BFB780 /* main.m in Sources */,
+				A99759DF1611C48200BFB780 /* AppDelegate.m in Sources */,
+				A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */,
+				A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */,
+				A99759F51611C6B100BFB780 /* OverlayView.m in Sources */,
+				A99759FA1611C99200BFB780 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A99759D71611C48200BFB780 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A99759D81611C48200BFB780 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A99759E61611C48200BFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A99759E71611C48200BFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A99759E91611C48200BFB780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTOverlayView_Test/FWTOverlayView_Test-Prefix.pch";
+				INFOPLIST_FILE = "FWTOverlayView_Test/FWTOverlayView_Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/FWTOverlayView-cbvhtayqnzktrdfgrbpnxliwwczl/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A99759EA1611C48200BFB780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FWTOverlayView_Test/FWTOverlayView_Test-Prefix.pch";
+				INFOPLIST_FILE = "FWTOverlayView_Test/FWTOverlayView_Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/FWTOverlayView-cbvhtayqnzktrdfgrbpnxliwwczl/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A99759C41611C48200BFB780 /* Build configuration list for PBXProject "FWTOverlayView_Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99759E61611C48200BFB780 /* Debug */,
+				A99759E71611C48200BFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A99759E81611C48200BFB780 /* Build configuration list for PBXNativeTarget "FWTOverlayView_Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99759E91611C48200BFB780 /* Debug */,
+				A99759EA1611C48200BFB780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A99759C11611C48200BFB780 /* Project object */;
+}
