@@ -9,8 +9,9 @@
 #import "FWTOverlayScrollViewHelper.h"
 #import <objc/runtime.h>
 #import <QuartzCore/QuartzCore.h>
+#import "UIScrollView+FWTOverlayView.h"
 
-#define DEBUG_ENABLED  NO
+#define DEBUG_ENABLED  YES
 
 static BOOL isMethodPartOfProtocol(SEL aSelector, Protocol *aProtocol)
 {
@@ -222,18 +223,22 @@ NSString *const keyPathFrame = @"frame";
 - (CGRect)_overlayFrame
 {
     // Work out positions
-    CGFloat maxTableHeight = self.scrollView.contentSize.height;
-    CGFloat frameTableHeight = self.scrollView.frame.size.height;
-    CGFloat workingTableHeight = maxTableHeight - frameTableHeight;
-    CGFloat currentTablePosition = self.scrollView.contentOffset.y;
-    CGFloat currentTablePositionPercentage = currentTablePosition / workingTableHeight;
-    currentTablePositionPercentage = MAX(currentTablePositionPercentage, .0f);
-    currentTablePositionPercentage = MIN(currentTablePositionPercentage, 1.0f);
-    
+    CGFloat currentTablePositionPercentage = [self.scrollView fwt_contentOffsetPercentageClampEnabled:YES];
     CGSize overlaySize = self.overlayView.frame.size;
     CGRect overlayFrame = [self _overlayBounds];
-    overlayFrame.origin.y += ((CGRectGetHeight(overlayFrame)-overlaySize.height)*currentTablePositionPercentage); // adjust y
-    overlayFrame.size.height = overlaySize.height;
+    
+    FWTScrollViewDirection direction = [self.scrollView fwt_scrollDirection];
+    if (direction == FWTScrollViewDirectionVertical)
+    {
+        overlayFrame.origin.y += ((CGRectGetHeight(overlayFrame)-overlaySize.height)*currentTablePositionPercentage); // adjust y
+        overlayFrame.size.height = overlaySize.height;
+    }
+    else if (direction == FWTScrollViewDirectionHorizontal)
+    {
+        overlayFrame.origin.x += ((CGRectGetWidth(overlayFrame)-overlaySize.width)*currentTablePositionPercentage); // adjust y
+        overlayFrame.size.width = overlaySize.width;
+    }
+
     return overlayFrame;
 }
 
@@ -241,10 +246,23 @@ NSString *const keyPathFrame = @"frame";
 {
     CGSize overlaySize = self.overlayView.frame.size;
     CGRect toReturn = UIEdgeInsetsInsetRect(self.scrollView.bounds, self.edgeInsets);
-    if (self.edgeInsets.left == .0f)
-        toReturn.origin.x += CGRectGetWidth(toReturn)-overlaySize.width;
     
-    toReturn.size.width = overlaySize.width;
+    FWTScrollViewDirection direction = [self.scrollView fwt_scrollDirection];
+    if (direction == FWTScrollViewDirectionVertical)
+    {
+        if (self.edgeInsets.left == .0f)
+            toReturn.origin.x += CGRectGetWidth(toReturn)-overlaySize.width;
+        
+        toReturn.size.width = overlaySize.width;
+    }
+    else if (direction == FWTScrollViewDirectionHorizontal)
+    {
+        if (self.edgeInsets.top == .0f)
+            toReturn.origin.y += CGRectGetHeight(toReturn)-overlaySize.height;
+        
+        toReturn.size.height = overlaySize.height;
+    }
+    
     return toReturn;
 }
 

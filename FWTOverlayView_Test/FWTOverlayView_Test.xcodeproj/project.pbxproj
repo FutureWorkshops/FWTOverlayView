@@ -21,7 +21,7 @@
 		A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F11611C5EC00BFB780 /* TableViewController.m */; };
 		A99759F51611C6B100BFB780 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F41611C6B100BFB780 /* OverlayView.m */; };
 		A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759F61611C6C100BFB780 /* QuartzCore.framework */; };
-		A99759FA1611C99200BFB780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F91611C99200BFB780 /* ViewController.m */; };
+		A99759FA1611C99200BFB780 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F91611C99200BFB780 /* ScrollViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,8 @@
 		A99759F31611C6B100BFB780 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		A99759F41611C6B100BFB780 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		A99759F61611C6C100BFB780 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		A99759F81611C99200BFB780 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A99759F91611C99200BFB780 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A99759F81611C99200BFB780 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		A99759F91611C99200BFB780 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +125,8 @@
 		A9975A0C1611E9D200BFB780 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				A99759F81611C99200BFB780 /* ViewController.h */,
-				A99759F91611C99200BFB780 /* ViewController.m */,
+				A99759F81611C99200BFB780 /* ScrollViewController.h */,
+				A99759F91611C99200BFB780 /* ScrollViewController.m */,
 				A99759F01611C5EC00BFB780 /* TableViewController.h */,
 				A99759F11611C5EC00BFB780 /* TableViewController.m */,
 				A99759F31611C6B100BFB780 /* OverlayView.h */,
@@ -205,7 +205,7 @@
 				A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */,
 				A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */,
 				A99759F51611C6B100BFB780 /* OverlayView.m in Sources */,
-				A99759FA1611C99200BFB780 /* ViewController.m in Sources */,
+				A99759FA1611C99200BFB780 /* ScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,6 +41,15 @@
     [super dealloc];
 }
 
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        self.title = @"table";
+    }
+    return self;
+}
+
 - (void)loadView
 {
     [super loadView];

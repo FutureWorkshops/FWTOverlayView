@@ -80,4 +80,39 @@ static char overlayHelperKey;
     return self.fwt_overlayView.center;
 }
 
+- (CGFloat)fwt_contentOffsetPercentage
+{
+    return [self fwt_contentOffsetPercentageClampEnabled:NO];
+}
+
+- (CGFloat)fwt_contentOffsetPercentageClampEnabled:(BOOL)clampEnabled
+{
+    BOOL isHorizontal = [self fwt_scrollDirection] == FWTScrollViewDirectionHorizontal ? YES : NO;
+    CGFloat contentSize = isHorizontal ? self.contentSize.width : self.contentSize.height;
+    CGFloat frameSize = isHorizontal ? self.frame.size.width : self.frame.size.height;
+    CGFloat currentTablePosition = isHorizontal ? self.contentOffset.x : self.contentOffset.y;
+    
+    CGFloat workingTableHeight = contentSize - frameSize;
+    CGFloat currentTablePositionPercentage = currentTablePosition / workingTableHeight;
+    
+    if (clampEnabled)
+    {
+        currentTablePositionPercentage = MAX(currentTablePositionPercentage, .0f);
+        currentTablePositionPercentage = MIN(currentTablePositionPercentage, 1.0f);
+    }
+
+    return currentTablePositionPercentage;
+}
+
+- (FWTScrollViewDirection)fwt_scrollDirection
+{
+    FWTScrollViewDirection toReturn = FWTScrollViewDirectionNone;
+    if (self.contentSize.width > CGRectGetWidth(self.frame))
+        toReturn = FWTScrollViewDirectionHorizontal;
+    else if (self.contentSize.height > CGRectGetHeight(self.frame))
+        toReturn = FWTScrollViewDirectionVertical;
+    
+    return toReturn;
+}
+
 @end

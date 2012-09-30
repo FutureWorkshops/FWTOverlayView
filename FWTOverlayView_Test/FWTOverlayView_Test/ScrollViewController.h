@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ScrollViewController : UIViewController
+
++ (id)scrollViewControllerWithContentSize:(CGSize)contentSize;
 
 @end
