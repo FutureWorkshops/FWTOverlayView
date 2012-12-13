@@ -45,8 +45,9 @@
 {
     if (!self->_items)
         self->_items = [@[
-                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(CGRectGetWidth(self.view.frame), 3000.0f)],
-                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, CGRectGetHeight(self.view.frame))],
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(CGRectGetWidth(self.view.frame), 3000.0f) title:@"vertical"],
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, CGRectGetHeight(self.view.frame)) title:@"horizontal"],
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, 3000.0f) title:@"vertical+horizontal"],
                         [[[TableViewController alloc] init] autorelease],
                         ] retain];
     

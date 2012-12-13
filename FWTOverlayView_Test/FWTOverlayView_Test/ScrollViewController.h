@@ -10,6 +10,6 @@
 
 @interface ScrollViewController : UIViewController
 
-+ (id)scrollViewControllerWithContentSize:(CGSize)contentSize;
++ (id)scrollViewControllerWithContentSize:(CGSize)contentSize title:(NSString *)title;
 
 @end

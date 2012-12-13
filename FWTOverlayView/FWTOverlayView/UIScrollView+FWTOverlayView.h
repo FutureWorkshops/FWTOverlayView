@@ -7,24 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FWTOverlayBlockDefinitions.h"
 
-typedef enum _FWTScrollViewDirection
-{
-    FWTScrollViewDirectionNone,
-    FWTScrollViewDirectionVertical,
-    FWTScrollViewDirectionHorizontal,
-} FWTScrollViewDirection;
+@interface UIScrollView (FWTRelativeContentOffset)
+
+@property (nonatomic) CGPoint fwt_relativeContentOffset;
+- (CGPoint)fwt_relativeContentOffsetNormalized:(BOOL)normalized;
+
+@end
+
 
 @interface UIScrollView (FWTOverlayView)
 
+//  configure
 @property (nonatomic, retain) UIView *fwt_overlayView;
 @property (nonatomic, assign) UIEdgeInsets fwt_overlayViewEdgeInsets;
+@property (nonatomic, assign) UIViewAutoresizing fwt_overlayViewFlexibleMargin;
 @property (nonatomic, assign) CGFloat fwt_overlayViewHideAfterDelay;
-@property (nonatomic, readonly, assign) CGPoint fwt_overlayViewCenter;
-
-@property (nonatomic, readonly, assign) CGFloat fwt_contentOffsetPercentage;
-- (CGFloat)fwt_contentOffsetPercentageClampEnabled:(BOOL)clampEnabled;
-
-@property (nonatomic, readonly, assign) FWTScrollViewDirection fwt_scrollDirection;
+@property (nonatomic, copy) FWTOverlayLayoutBlock fwt_layoutBlock;
+@property (nonatomic, copy) FWTOverlayDismissBlock fwt_dismissBlock;
 
 @end

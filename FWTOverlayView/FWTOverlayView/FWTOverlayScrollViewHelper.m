@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIScrollView+FWTOverlayView.h"
 
-#define DEBUG_ENABLED  YES
+#define DEBUG_ENABLED  NO
 
 static BOOL isMethodPartOfProtocol(SEL aSelector, Protocol *aProtocol)
 {
@@ -44,9 +44,9 @@ NSString *const keyPathFrame = @"frame";
 @property (nonatomic, assign) UIScrollView *scrollView;
 @property (nonatomic, assign) id<UIScrollViewDelegate> realDelegate;
 @property (nonatomic, retain) UIView *debugView;
-@property (nonatomic, assign) CGFloat presentAnimationDuration, dismissAnimationDuration;
-@property (nonatomic, assign) CGFloat slideOffset;
 @property (nonatomic, assign, getter = isOverlayViewVisible) BOOL overlayViewVisible;
+@property (nonatomic, assign, getter = isDismissAnimationRunning) BOOL dismissAnimationRunning;
+@property (nonatomic, assign) BOOL overlayViewWillDisappear;
 @end
 
 
@@ -55,6 +55,8 @@ NSString *const keyPathFrame = @"frame";
 
 - (void)dealloc
 {
+    self.dismissBlock = NULL;
+    self.layoutBlock = NULL;
     self.debugView = nil;
     self.overlayView = nil;
     self.realDelegate = nil;
@@ -68,9 +70,6 @@ NSString *const keyPathFrame = @"frame";
     {
         self.scrollView = scrollView;
         self.hideAfterDelay = 2.0f;
-        self.presentAnimationDuration = .2f;
-        self.dismissAnimationDuration = .2f;
-        self.slideOffset = 20.0f;
     }
     
     return self;
@@ -96,6 +95,7 @@ NSString *const keyPathFrame = @"frame";
             //
             [self->_scrollView addObserver:self forKeyPath:keyPathDelegate options:NSKeyValueObservingOptionNew context:NULL];
             [self->_scrollView addObserver:self forKeyPath:keyPathFrame options:NSKeyValueObservingOptionNew context:NULL];
+            //TODO: add observer for contentSize
         }
     }
 }
@@ -168,6 +168,49 @@ NSString *const keyPathFrame = @"frame";
     return self->_debugView;
 }
 
+- (FWTOverlayLayoutBlock)layoutBlock
+{
+    if (self->_layoutBlock == NULL)
+    {
+        __block typeof(self) myself = self;
+        self->_layoutBlock = [^(BOOL animated){
+            if (animated)
+            {
+                CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+                anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+                anim.fromValue = @.0f;
+                anim.toValue = @1.0f;
+                myself.overlayView.layer.opacity = 1.0f;
+                [myself.overlayView.layer addAnimation:anim forKey:@"animation"];
+            }
+            else
+                myself.overlayView.layer.opacity = 1.0f;
+            
+        } copy];
+    }
+    
+    return self->_layoutBlock;
+}
+
+- (FWTOverlayDismissBlock)dismissBlock
+{
+    if (self->_dismissBlock == NULL)
+    {
+        __block typeof(self) myself = self;
+        self->_dismissBlock = [^(){
+            CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
+            anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+            anim.fromValue = @1.0f;
+            anim.toValue = @.0f;
+            myself.overlayView.layer.opacity = .0f;
+            [myself.overlayView.layer addAnimation:anim forKey:@"animation"];
+            
+        } copy];
+    }
+    
+    return self->_dismissBlock;
+}
+
 #pragma mark - Private
 - (void)_swapDelegateForScrollView:(UIScrollView *)scrollView
 {
@@ -204,94 +247,67 @@ NSString *const keyPathFrame = @"frame";
 {
     if (!self.overlayView.superview)
     {
+        self.overlayView.frame = [self _overlayFrame];
         [self.scrollView addSubview:self.overlayView];
-        self.overlayView.alpha = .0f;
-        [UIView animateWithDuration:self.presentAnimationDuration
-                         animations:^{
-                             self.overlayView.alpha = 1.0f;
-                             self.overlayView.transform = CGAffineTransformMakeTranslation(-self.slideOffset, 0.0f);
-                         }];
+        self.layoutBlock(YES);
     }
     else
     {
         [self.scrollView bringSubviewToFront:self.overlayView];
         self.overlayView.frame = [self _overlayFrame];
-        self.overlayView.alpha = 1.0f;
+        self.layoutBlock(NO);
     }
 }
 
 - (CGRect)_overlayFrame
 {
-    // Work out positions
-    CGFloat currentTablePositionPercentage = [self.scrollView fwt_contentOffsetPercentageClampEnabled:YES];
+    CGPoint contentOffsetRelative = [self.scrollView fwt_relativeContentOffsetNormalized:YES];
     CGSize overlaySize = self.overlayView.frame.size;
-    CGRect overlayFrame = [self _overlayBounds];
+    CGRect overlayAvailableFrame = [self _overlayBounds];
+    CGRect toReturn = overlayAvailableFrame;
+    toReturn.origin.x += ((CGRectGetWidth(overlayAvailableFrame)-overlaySize.width)*contentOffsetRelative.x);
+    toReturn.origin.y += ((CGRectGetHeight(overlayAvailableFrame)-overlaySize.height)*contentOffsetRelative.y);
+    toReturn.size = overlaySize;
     
-    FWTScrollViewDirection direction = [self.scrollView fwt_scrollDirection];
-    if (direction == FWTScrollViewDirectionVertical)
+    if (self.flexibleMargin == UIViewAutoresizingFlexibleLeftMargin)
     {
-        overlayFrame.origin.y += ((CGRectGetHeight(overlayFrame)-overlaySize.height)*currentTablePositionPercentage); // adjust y
-        overlayFrame.size.height = overlaySize.height;
+        toReturn.origin.x += CGRectGetWidth(overlayAvailableFrame)-overlaySize.width;
     }
-    else if (direction == FWTScrollViewDirectionHorizontal)
+    else if (self.flexibleMargin == UIViewAutoresizingFlexibleTopMargin)
     {
-        overlayFrame.origin.x += ((CGRectGetWidth(overlayFrame)-overlaySize.width)*currentTablePositionPercentage); // adjust y
-        overlayFrame.size.width = overlaySize.width;
-    }
-
-    return overlayFrame;
-}
-
-- (CGRect)_overlayBounds
-{
-    CGSize overlaySize = self.overlayView.frame.size;
-    CGRect toReturn = UIEdgeInsetsInsetRect(self.scrollView.bounds, self.edgeInsets);
-    
-    FWTScrollViewDirection direction = [self.scrollView fwt_scrollDirection];
-    if (direction == FWTScrollViewDirectionVertical)
-    {
-        if (self.edgeInsets.left == .0f)
-            toReturn.origin.x += CGRectGetWidth(toReturn)-overlaySize.width;
-        
-        toReturn.size.width = overlaySize.width;
-    }
-    else if (direction == FWTScrollViewDirectionHorizontal)
-    {
-        if (self.edgeInsets.top == .0f)
-            toReturn.origin.y += CGRectGetHeight(toReturn)-overlaySize.height;
-        
-        toReturn.size.height = overlaySize.height;
+        toReturn.origin.y += CGRectGetHeight(overlayAvailableFrame)-overlaySize.height;
     }
     
     return toReturn;
 }
 
+- (CGRect)_overlayBounds
+{
+    return UIEdgeInsetsInsetRect(self.scrollView.bounds, self.edgeInsets);
+}
+
 - (void)_dismissOverlayView
 {
-    if (!_dismissOverlayViewAnimating)
+    if (![self isDismissAnimationRunning])
     {
-        _dismissOverlayViewAnimating = YES;
-
-        [UIView animateWithDuration:self.dismissAnimationDuration
-                         animations:^{
-                             self.overlayView.alpha = .0f;
-                             self.overlayView.frame = CGRectOffset(self.overlayView.frame, self.slideOffset, .0f);
-                         }
-                         completion:^(BOOL finished) {
-                             
-                             _dismissOverlayViewAnimating = NO;
-                                                          
-                             // check if we did have a scroll during the animation run
-                             if (self.overlayView.alpha == .0f)
-                             {
-                                 [self.debugView removeFromSuperview];
-                                 [self.overlayView removeFromSuperview];
-                                 self.overlayView.transform = CGAffineTransformIdentity;
-                                 
-                                 self.overlayViewVisible = NO;
-                             }
-                         }
-         ];
+        self.dismissAnimationRunning = YES;
+        self.overlayViewWillDisappear = YES;
+        
+        __block typeof(self) myself = self;
+        [CATransaction begin];
+        [CATransaction setCompletionBlock:^{
+            if (myself.overlayViewWillDisappear)
+            {
+                [myself.debugView removeFromSuperview];
+                [myself.overlayView removeFromSuperview];
+                myself.overlayViewVisible = NO;
+            }
+            
+            myself.dismissAnimationRunning = NO;
+        }];
+        
+        self.dismissBlock();
+        [CATransaction commit];
     }
 }
 
@@ -299,6 +315,8 @@ NSString *const keyPathFrame = @"frame";
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     self.overlayViewVisible = YES;
+    self.overlayViewWillDisappear = NO;
+    [self.overlayView.layer removeAllAnimations];
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(_dismissOverlayView) object:nil];
     
@@ -326,10 +344,8 @@ NSString *const keyPathFrame = @"frame";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //
     [self _layoutSubviews];
     
-    //
     if (_realDelegateHas.scrollViewDidScroll)
         [self.realDelegate scrollViewDidScroll:scrollView];
 }

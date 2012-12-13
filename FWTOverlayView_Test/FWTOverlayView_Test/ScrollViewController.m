@@ -33,14 +33,26 @@
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
-    OverlayView *overlayView = [[[OverlayView alloc] initWithFrame:CGRectMake(.0f, .0f, 70.0f, 30.0f)] autorelease];
+    OverlayView *overlayView = [[[OverlayView alloc] initWithFrame:CGRectMake(.0f, .0f, 80.0f, 34.0f)] autorelease];
     overlayView.textLabel.numberOfLines = 0;
     self.scrollView.fwt_overlayView = overlayView;
     
-    if (self.contentSize.width > self.contentSize.height)
-        self.scrollView.fwt_overlayViewEdgeInsets = UIEdgeInsetsMake(2.0f, 2.0f, .0f, 2.0f);
-    else
-        self.scrollView.fwt_overlayViewEdgeInsets = UIEdgeInsetsMake(2.0f, .0f, 2.0f, 10.0f);
+    CGSize viewSize = self.view.frame.size;
+    if (self.contentSize.width > viewSize.width && self.contentSize.height > viewSize.height)
+    {
+//        self.scrollView.fwt_overlayViewEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 200.0f, 200.0f);
+    }
+    else if (self.contentSize.width > self.view.frame.size.width)
+    {
+        self.scrollView.fwt_overlayViewEdgeInsets = UIEdgeInsetsMake(2.0f, 2.0f, 10.0f, 2.0f);
+//        self.scrollView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleTopMargin;
+    }
+    else if (self.contentSize.height > viewSize.height)
+    {
+        self.scrollView.fwt_overlayViewEdgeInsets = (UIEdgeInsets){2.0f, 2.0f, 2.0f, 10.0f};
+        self.scrollView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleLeftMargin;
+
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,16 +63,17 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat percentage = [scrollView fwt_contentOffsetPercentageClampEnabled:NO];
+    CGPoint relativeContentOffset = [scrollView fwt_relativeContentOffsetNormalized:NO];
     OverlayView *overlayView = (OverlayView *)scrollView.fwt_overlayView;
-    overlayView.textLabel.text = [NSString stringWithFormat:@"%f", percentage];
+    overlayView.textLabel.text = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(relativeContentOffset)];
 }
 
-+ (id)scrollViewControllerWithContentSize:(CGSize)contentSize
++ (id)scrollViewControllerWithContentSize:(CGSize)contentSize title:(NSString *)title
 {
     ScrollViewController *toReturn = [[[ScrollViewController alloc] init] autorelease];
     toReturn.contentSize = contentSize;
-    toReturn.title = contentSize.width > contentSize.height ? @"horizontal" : @"vertical";
+    toReturn.title = title;
+//    toReturn.title = contentSize.width > contentSize.height ? @"horizontal" : @"vertical";
     return toReturn;
 }
 
