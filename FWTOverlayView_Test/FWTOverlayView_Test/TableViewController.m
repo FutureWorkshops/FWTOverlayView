@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "OverlayView.h"
 #import "UITableView+FWTOverlayView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface Item : NSObject
 @property (nonatomic, retain) NSDate *date;
@@ -41,14 +42,65 @@
     [super dealloc];
 }
 
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        self.title = @"table";
+    }
+    return self;
+}
+
 - (void)loadView
 {
     [super loadView];
     
     self.tableView.backgroundColor = [UIColor colorWithWhite:.8f alpha:1.0f];
     
-    self.tableView.fwt_overlayView = [[[OverlayView alloc] initWithFrame:CGRectMake(.0f, .0f, 70.0f, 30.0f)] autorelease];
-    self.tableView.fwt_overlayViewEdgeInsets = UIEdgeInsetsMake(2.0f, .0f, 2.0f, 10.0f);
+    UIView *overlayView = [[[OverlayView alloc] initWithFrame:CGRectMake(.0f, .0f, 80.0f, 34.0f)] autorelease];
+    self.tableView.fwt_overlayView = overlayView;
+    self.tableView.fwt_overlayViewEdgeInsets = (UIEdgeInsets){2.0f, 2.0f, 2.0f, 10.0f};
+    self.tableView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleLeftMargin;
+    
+    __block typeof(overlayView) weakOverlayView = overlayView;
+    self.tableView.fwt_layoutBlock = ^(BOOL animated){
+        if (animated)
+        {
+            //
+            CABasicAnimation *opacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+            opacity.fromValue = @.0f;
+            opacity.toValue = @1.0f;
+            
+            CABasicAnimation *translation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+            translation.fromValue = @40;
+            
+            CAAnimationGroup *group = [CAAnimationGroup animation];
+            group.animations = @[opacity, translation];
+            group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+            weakOverlayView.layer.opacity = 1.0f;
+            [weakOverlayView.layer addAnimation:group forKey:@"groupAnimation"];
+        }
+        else
+        {
+            weakOverlayView.layer.opacity = 1.0f;
+        }
+    };
+
+    self.tableView.fwt_dismissBlock = ^(){
+        //
+        CABasicAnimation *opacity = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        opacity.fromValue = @1.0f;
+        opacity.toValue = @.0f;
+        
+        CABasicAnimation *translation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+        translation.toValue = @40;
+        
+        CAAnimationGroup *group = [CAAnimationGroup animation];
+        group.animations = @[opacity, translation];
+        group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
+        weakOverlayView.layer.opacity = .0f;
+        [weakOverlayView.layer addAnimation:group forKey:@"groupAnimation"];
+    };
 }
 
 #pragma mark - Getters
@@ -120,8 +172,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    OverlayView *overlayView = (OverlayView *)scrollView.fwt_overlayView;
     Item *item = [self.data objectAtIndex:self.tableView.fwt_overlayViewIndexPath.row];
+    OverlayView *overlayView = (OverlayView *)scrollView.fwt_overlayView;
     overlayView.textLabel.text = item.timeString;
     overlayView.detailTextLabel.text = item.dateString;
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FWTOverlayBlockDefinitions.h"
 
 //  This is a private class. You can access its properties through the UIScrollView (FWTOverlay) category. 
 //
@@ -17,6 +18,9 @@
 @property (nonatomic, retain) UIView *overlayView;
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
 @property (nonatomic, assign) CGFloat hideAfterDelay;
+@property (nonatomic, assign) UIViewAutoresizing flexibleMargin;
+@property (nonatomic, copy) FWTOverlayLayoutBlock layoutBlock;
+@property (nonatomic, copy) FWTOverlayDismissBlock dismissBlock;
 
 - (id)initWithScrollView:(UIScrollView *)scrollView;
 

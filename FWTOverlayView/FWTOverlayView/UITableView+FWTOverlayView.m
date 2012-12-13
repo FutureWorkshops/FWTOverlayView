@@ -9,16 +9,12 @@
 #import "UITableView+FWTOverlayView.h"
 #import "FWTOverlayScrollViewHelper.h"
 
-@interface UIScrollView ()
-- (FWTOverlayScrollViewHelper *)_getAssociatedScrollViewHelperAndInitIfNeeded:(BOOL)value;
-@end
-
 @implementation UITableView (FWTOverlayView)
 
 - (NSIndexPath *)fwt_overlayViewIndexPath
 {
-    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:NO];
-    if (helper)
+    UIView *overlayView = self.fwt_overlayView;
+    if (overlayView)
     {
         if (self.contentOffset.y < 0)
         {
@@ -34,7 +30,7 @@
         }
         else
         {
-            return [self indexPathForRowAtPoint:helper.overlayView.center];
+            return [self indexPathForRowAtPoint:overlayView.center];
         }
     }
     return nil;
