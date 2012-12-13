@@ -46,11 +46,25 @@ The sample project shows how to use the categories and how to create a custom ov
 
 ``` objective-c
 
-	CGRect frame = CGRectMake(.0f, .0f, 80.0f, 34.0f);
-	UIView *overlayView = [[[OverlayView alloc] initWithFrame:frame] autorelease];
-    self.tableView.fwt_overlayView = overlayView;
-    self.tableView.fwt_overlayViewEdgeInsets = (UIEdgeInsets){2.0f, 2.0f, 2.0f, 10.0f};
-    self.tableView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleLeftMargin;
+	- (void)loadView
+	{
+		[super loadView];
+
+		// set and configure the overlay view	
+		CGRect frame = CGRectMake(.0f, .0f, 80.0f, 34.0f);
+    	self.tableView.fwt_overlayView = [[[OverlayView alloc] initWithFrame:frame] autorelease];
+    	self.tableView.fwt_overlayViewEdgeInsets = (UIEdgeInsets){2.0f, 2.0f, 2.0f, 10.0f};
+    	self.tableView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleLeftMargin;
+    }
+    
+    - (void)scrollViewDidScroll:(UIScrollView *)scrollView
+	{
+		// update the overlay view displayed values
+    	Item *item = [self.data objectAtIndex:self.tableView.fwt_overlayViewIndexPath.row];
+    	OverlayView *overlayView = (OverlayView *)scrollView.fwt_overlayView;
+    	overlayView.textLabel.text = item.timeString;
+    	overlayView.detailTextLabel.text = item.dateString;
+	}
 
 ```
 
