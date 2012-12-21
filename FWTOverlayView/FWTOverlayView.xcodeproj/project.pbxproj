@@ -29,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A923ED621678A39300709A25 /* FWTOverlayBlockDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTOverlayBlockDefinitions.h; sourceTree = "<group>"; };
 		A997599D1611C35A00BFB780 /* libFWTOverlayView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFWTOverlayView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99759A01611C35A00BFB780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A99759A41611C35A00BFB780 /* FWTOverlayView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FWTOverlayView-Prefix.pch"; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		A99759B81611C3B300BFB780 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				A923ED621678A39300709A25 /* FWTOverlayBlockDefinitions.h */,
 				A99759AE1611C39800BFB780 /* FWTOverlayScrollViewHelper.h */,
 				A99759AF1611C39800BFB780 /* FWTOverlayScrollViewHelper.m */,
 			);

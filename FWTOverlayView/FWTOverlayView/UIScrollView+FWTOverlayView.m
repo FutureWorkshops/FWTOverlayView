@@ -10,9 +10,43 @@
 #import "FWTOverlayScrollViewHelper.h"
 #import <objc/runtime.h>
 
+@implementation UIScrollView (FWTRelativeContentOffset)
+
+- (CGPoint)fwt_relativeContentOffset
+{
+    return [self fwt_relativeContentOffsetNormalized:NO];
+}
+
+- (CGPoint)fwt_relativeContentOffsetNormalized:(BOOL)normalized
+{
+    CGPoint toReturn = CGPointZero;
+    CGSize contentSize = self.contentSize;
+    CGSize frameSize = self.frame.size;
+    CGPoint contentOffset = self.contentOffset;
+    CGSize workingSize = (CGSize){contentSize.width-frameSize.width, contentSize.height-frameSize.height};
+    toReturn.x = isnan(contentOffset.x/workingSize.width) ? .0f : contentOffset.x/workingSize.width;
+    toReturn.y = isnan(contentOffset.y/workingSize.height) ? .0f : contentOffset.y/workingSize.height;
+    if (normalized)
+    {
+        toReturn.x = MAX(toReturn.x, .0f);
+        toReturn.x = MIN(toReturn.x, 1.0f);
+        toReturn.y = MAX(toReturn.y, .0f);
+        toReturn.y = MIN(toReturn.y, 1.0f);
+    }
+    
+    return toReturn;
+}
+
+- (void)setFwt_relativeContentOffset:(CGPoint)fwt_relativeContentOffset
+{
+    
+}
+
+@end
+
 static char overlayHelperKey;
 
-@interface UIScrollView ()
+@interface UIScrollView (FWTOverlayView_Private)
 @property (nonatomic, retain) FWTOverlayScrollViewHelper *fwt_overlayHelper;
 @end
 
@@ -63,6 +97,18 @@ static char overlayHelperKey;
     return helper.edgeInsets;
 }
 
+- (void)setFwt_overlayViewFlexibleMargin:(UIViewAutoresizing)fwt_overlayViewFlexibleMargin
+{
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:YES];
+    helper.flexibleMargin = fwt_overlayViewFlexibleMargin;
+}
+
+- (UIViewAutoresizing)fwt_overlayViewFlexibleMargin
+{
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:NO];
+    return helper.flexibleMargin;
+}
+
 - (void)setFwt_overlayViewHideAfterDelay:(CGFloat)fwt_hideAfterDelay
 {
     FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:YES];
@@ -75,9 +121,28 @@ static char overlayHelperKey;
     return helper.hideAfterDelay;
 }
 
-- (CGPoint)fwt_overlayViewCenter
+- (FWTOverlayLayoutBlock)fwt_layoutBlock
 {
-    return self.fwt_overlayView.center;
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:NO];
+    return helper.layoutBlock;
+}
+
+- (void)setFwt_layoutBlock:(FWTOverlayLayoutBlock)fwt_layoutBlock
+{
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:YES];
+    helper.layoutBlock = fwt_layoutBlock;
+}
+
+- (FWTOverlayDismissBlock)fwt_dismissBlock
+{
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:NO];
+    return helper.dismissBlock;
+}
+
+- (void)setFwt_dismissBlock:(FWTOverlayDismissBlock)fwt_dismissBlock
+{
+    FWTOverlayScrollViewHelper *helper = [self _getAssociatedScrollViewHelperAndInitIfNeeded:YES];
+    helper.dismissBlock = fwt_dismissBlock;
 }
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "SamplePickerViewController.h"
+#import "ScrollViewController.h"
+#import "TableViewController.h"
 
 @interface SamplePickerViewController ()
 {
@@ -43,8 +45,10 @@
 {
     if (!self->_items)
         self->_items = [@[
-                        @"ViewController",
-                        @"TableViewController",
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(CGRectGetWidth(self.view.frame), 3000.0f) title:@"vertical"],
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, CGRectGetHeight(self.view.frame)) title:@"horizontal"],
+                        [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, 3000.0f) title:@"vertical+horizontal"],
+                        [[[TableViewController alloc] init] autorelease],
                         ] retain];
     
     return self->_items;
@@ -62,15 +66,15 @@
     if (!cell)
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     
-    cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
+    UIViewController *vc = [self.items objectAtIndex:indexPath.row];
+    cell.textLabel.text = vc.title;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *className = [self.items objectAtIndex:indexPath.row];
-    UIViewController *vc = [[[NSClassFromString(className) alloc] init] autorelease];
+    UIViewController *vc = [self.items objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
