@@ -27,24 +27,6 @@
     [super dealloc];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-//        self.layer.shadowOpacity = .2f;
-//        self.layer.shadowRadius = 6.0f;
-//        self.layer.shadowOffset = CGSizeMake(.0f, 2.0f);
-//        self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
-    }
-    return self;
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-}
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -105,9 +87,7 @@
 - (UIImageView *)imageView
 {
     if (!self->_imageView)
-    {
         self->_imageView = [[UIImageView alloc] initWithImage:[self _backgroundImage]];
-    }
     
     return self->_imageView;
 }
@@ -116,32 +96,23 @@
 {
     CGSize ctxSize = CGSizeMake(20.0f, 20.0f);
     CGRect ctxRect = CGRectMake(.0f, .0f, ctxSize.width, ctxSize.height);
-    UIGraphicsBeginImageContextWithOptions(ctxSize, NO, .0f);
-    ctxRect = CGRectInset(ctxRect, 5, 5);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    UIBezierPath *bp = [UIBezierPath bezierPathWithRoundedRect:ctxRect cornerRadius:3];
-    
-    CGContextSaveGState(ctx);
-    CGContextSetShadowWithColor(ctx, CGSizeMake(.0f, 1.0f), 4.0f, [UIColor blackColor].CGColor);
-    [[UIColor blackColor] set];
-    [bp fill];
-    [bp addClip];
-    CGContextClearRect(ctx, ctxRect);
-    CGContextRestoreGState(ctx);
-    
-    [[[UIColor whiteColor] colorWithAlphaComponent:.7f] set];
-    [bp stroke];
-    
-    bp = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(ctxRect, 2, 2) cornerRadius:2];
-    [[[UIColor whiteColor] colorWithAlphaComponent:.5f] set];
-    [bp fill];
-    [bp stroke];
-    
-    //
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(10.0f, 10.0f, 9.0f, 9.0f)];
+    return [UIImage fwt_imageWithSize:ctxSize block:^(CGContextRef ctx) {
+        CGRect availableRect = CGRectInset(ctxRect, 5, 5);
+        UIBezierPath *bp = [UIBezierPath bezierPathWithRoundedRect:ctxRect cornerRadius:3];
+        CGContextSaveGState(ctx);
+        CGContextSetShadowWithColor(ctx, CGSizeMake(.0f, 1.0f), 4.0f, [UIColor blackColor].CGColor);
+        [[UIColor blackColor] set];
+        [bp fill];
+        [bp addClip];
+        CGContextClearRect(ctx, availableRect);
+        CGContextRestoreGState(ctx);
+        [[[UIColor whiteColor] colorWithAlphaComponent:.7f] set];
+        [bp stroke];
+        bp = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(availableRect, 2, 2) cornerRadius:2];
+        [[[UIColor whiteColor] colorWithAlphaComponent:.5f] set];
+        [bp fill];
+        [bp stroke];
+    }];
 }
 
 @end

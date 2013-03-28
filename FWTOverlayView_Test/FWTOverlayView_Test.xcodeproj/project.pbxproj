@@ -21,7 +21,6 @@
 		A99759E31611C48200BFB780 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E21611C48200BFB780 /* Default@2x.png */; };
 		A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E41611C48200BFB780 /* Default-568h@2x.png */; };
 		A99759EC1611C49500BFB780 /* libFWTOverlayView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759EB1611C49500BFB780 /* libFWTOverlayView.a */; };
-		A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */; };
 		A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F11611C5EC00BFB780 /* TableViewController.m */; };
 		A99759F51611C6B100BFB780 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F41611C6B100BFB780 /* OverlayView.m */; };
 		A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759F61611C6C100BFB780 /* QuartzCore.framework */; };
@@ -50,8 +49,6 @@
 		A99759E21611C48200BFB780 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A99759E41611C48200BFB780 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A99759EB1611C49500BFB780 /* libFWTOverlayView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFWTOverlayView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePickerViewController.h; sourceTree = "<group>"; };
-		A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePickerViewController.m; sourceTree = "<group>"; };
 		A99759F01611C5EC00BFB780 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		A99759F11611C5EC00BFB780 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		A99759F31611C6B100BFB780 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 			children = (
 				A99759DD1611C48200BFB780 /* AppDelegate.h */,
 				A99759DE1611C48200BFB780 /* AppDelegate.m */,
-				A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */,
-				A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */,
 				A9975A0C1611E9D200BFB780 /* Sample */,
 				A99759D51611C48200BFB780 /* Supporting Files */,
 			);
@@ -230,7 +225,6 @@
 			files = (
 				A99759DB1611C48200BFB780 /* main.m in Sources */,
 				A99759DF1611C48200BFB780 /* AppDelegate.m in Sources */,
-				A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */,
 				A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */,
 				A99759F51611C6B100BFB780 /* OverlayView.m in Sources */,
 				A99759FA1611C99200BFB780 /* ScrollViewController.m in Sources */,
