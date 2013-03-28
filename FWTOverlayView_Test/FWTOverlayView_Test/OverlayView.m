@@ -96,9 +96,9 @@
 {
     CGSize ctxSize = CGSizeMake(20.0f, 20.0f);
     CGRect ctxRect = CGRectMake(.0f, .0f, ctxSize.width, ctxSize.height);
-    return [UIImage fwt_imageWithSize:ctxSize block:^(CGContextRef ctx) {
+    return [UIImage fwt_resizableImageWithSize:ctxSize capInsets:UIEdgeInsetsMake(10.0f, 10.0f, 9.0f, 9.0f) block:^(CGContextRef ctx) {
         CGRect availableRect = CGRectInset(ctxRect, 5, 5);
-        UIBezierPath *bp = [UIBezierPath bezierPathWithRoundedRect:ctxRect cornerRadius:3];
+        UIBezierPath *bp = [UIBezierPath bezierPathWithRoundedRect:availableRect cornerRadius:3];
         CGContextSaveGState(ctx);
         CGContextSetShadowWithColor(ctx, CGSizeMake(.0f, 1.0f), 4.0f, [UIColor blackColor].CGColor);
         [[UIColor blackColor] set];

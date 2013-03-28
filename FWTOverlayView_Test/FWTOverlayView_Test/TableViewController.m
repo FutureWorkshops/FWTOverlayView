@@ -139,6 +139,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     Item *item = [self.items objectAtIndex:self.tableView.fwt_overlayViewIndexPath.row];

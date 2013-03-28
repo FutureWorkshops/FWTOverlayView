@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A9213DD01704564F00C15DFA /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DCE1704564F00C15DFA /* button_back.png */; };
 		A9213DD11704564F00C15DFA /* button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DCF1704564F00C15DFA /* button_back@2x.png */; };
-		A9213DD4170456AB00C15DFA /* icon_overlayview.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD2170456AB00C15DFA /* icon_overlayview.png */; };
-		A9213DD5170456AB00C15DFA /* icon_overlayview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD3170456AB00C15DFA /* icon_overlayview@2x.png */; };
+		A9213DD4170456AB00C15DFA /* icon_project.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD2170456AB00C15DFA /* icon_project.png */; };
+		A9213DD5170456AB00C15DFA /* icon_project@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD3170456AB00C15DFA /* icon_project@2x.png */; };
 		A99759CF1611C48200BFB780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759CE1611C48200BFB780 /* UIKit.framework */; };
 		A99759D11611C48200BFB780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D01611C48200BFB780 /* Foundation.framework */; };
 		A99759D31611C48200BFB780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D21611C48200BFB780 /* CoreGraphics.framework */; };
@@ -33,8 +33,8 @@
 /* Begin PBXFileReference section */
 		A9213DCE1704564F00C15DFA /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
 		A9213DCF1704564F00C15DFA /* button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_back@2x.png"; sourceTree = "<group>"; };
-		A9213DD2170456AB00C15DFA /* icon_overlayview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_overlayview.png; sourceTree = "<group>"; };
-		A9213DD3170456AB00C15DFA /* icon_overlayview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_overlayview@2x.png"; sourceTree = "<group>"; };
+		A9213DD2170456AB00C15DFA /* icon_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_project.png; sourceTree = "<group>"; };
+		A9213DD3170456AB00C15DFA /* icon_project@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_project@2x.png"; sourceTree = "<group>"; };
 		A99759CA1611C48200BFB780 /* FWTOverlayView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTOverlayView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99759CE1611C48200BFB780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A99759D01611C48200BFB780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,8 +127,8 @@
 				A99759D61611C48200BFB780 /* FWTOverlayView_Test-Info.plist */,
 				A99759D71611C48200BFB780 /* InfoPlist.strings */,
 				A99759DA1611C48200BFB780 /* main.m */,
-				A9213DD2170456AB00C15DFA /* icon_overlayview.png */,
-				A9213DD3170456AB00C15DFA /* icon_overlayview@2x.png */,
+				A9213DD2170456AB00C15DFA /* icon_project.png */,
+				A9213DD3170456AB00C15DFA /* icon_project@2x.png */,
 				A99759DC1611C48200BFB780 /* FWTOverlayView_Test-Prefix.pch */,
 				A9213DCE1704564F00C15DFA /* button_back.png */,
 				A9213DCF1704564F00C15DFA /* button_back@2x.png */,
@@ -209,8 +209,8 @@
 				A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */,
 				A9213DD01704564F00C15DFA /* button_back.png in Resources */,
 				A9213DD11704564F00C15DFA /* button_back@2x.png in Resources */,
-				A9213DD4170456AB00C15DFA /* icon_overlayview.png in Resources */,
-				A9213DD5170456AB00C15DFA /* icon_overlayview@2x.png in Resources */,
+				A9213DD4170456AB00C15DFA /* icon_project.png in Resources */,
+				A9213DD5170456AB00C15DFA /* icon_project@2x.png in Resources */,
 				A9D14A491704859800F64866 /* icon.png in Resources */,
 				A9D14A4B1704859E00F64866 /* icon@2x.png in Resources */,
 			);
