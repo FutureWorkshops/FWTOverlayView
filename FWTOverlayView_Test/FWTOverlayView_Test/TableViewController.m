@@ -55,7 +55,8 @@
 {
     [super loadView];
     
-    self.tableView.backgroundColor = [UIColor colorWithWhite:.8f alpha:1.0f];
+//    self.tableView.backgroundColor = [UIColor colorWithWhite:.8f alpha:1.0f];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     UIView *overlayView = [[[OverlayView alloc] initWithFrame:CGRectMake(.0f, .0f, 80.0f, 34.0f)] autorelease];
     self.tableView.fwt_overlayView = overlayView;
@@ -156,7 +157,11 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell)
+    {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell.textLabel.font = [UIFont Ristretto_mediumFontOfSize:16.0f];
+        cell.detailTextLabel.font = [UIFont Ristretto_lightFontOfSize:14.0f];
+    }
     
     Item *item = [self.data objectAtIndex:indexPath.row];
     

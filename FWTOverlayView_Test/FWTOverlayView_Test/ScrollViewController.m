@@ -51,7 +51,6 @@
     {
         self.scrollView.fwt_overlayViewEdgeInsets = (UIEdgeInsets){2.0f, 2.0f, 2.0f, 10.0f};
         self.scrollView.fwt_overlayViewFlexibleMargin = UIViewAutoresizingFlexibleLeftMargin;
-
     }
 }
 
@@ -73,7 +72,6 @@
     ScrollViewController *toReturn = [[[ScrollViewController alloc] init] autorelease];
     toReturn.contentSize = contentSize;
     toReturn.title = title;
-//    toReturn.title = contentSize.width > contentSize.height ? @"horizontal" : @"vertical";
     return toReturn;
 }
 

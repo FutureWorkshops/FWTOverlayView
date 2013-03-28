@@ -78,7 +78,7 @@
         self->_textLabel.numberOfLines = 0;
         self->_textLabel.backgroundColor = [UIColor clearColor];
         self->_textLabel.textColor = [UIColor redColor];
-        self->_textLabel.font = [UIFont italicSystemFontOfSize:8.0f];
+        self->_textLabel.font = [UIFont Ristretto_lightFontOfSize:8.0f];
         self->_textLabel.textAlignment = UITextAlignmentCenter;
         self->_textLabel.shadowColor = [[UIColor whiteColor] colorWithAlphaComponent:.7f];
         self->_textLabel.shadowOffset = CGSizeMake(.0f, 1.0f);
@@ -94,7 +94,7 @@
         self->_detailTextLabel.numberOfLines = 0;
         self->_detailTextLabel.backgroundColor = [UIColor clearColor];
         self->_detailTextLabel.textColor = [UIColor blackColor];
-        self->_detailTextLabel.font = [UIFont systemFontOfSize:8.0f];
+        self->_detailTextLabel.font = [UIFont Ristretto_mediumFontOfSize:8.0f];
         self->_detailTextLabel.textAlignment = UITextAlignmentCenter;
         self->_detailTextLabel.shadowColor = [[UIColor whiteColor] colorWithAlphaComponent:.7f];
         self->_detailTextLabel.shadowOffset = CGSizeMake(.0f, 1.0f);
