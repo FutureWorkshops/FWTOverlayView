@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "SamplePickerViewController.h"
+#import "ScrollViewController.h"
+#import "TableViewController.h"
 
 @implementation AppDelegate
 
@@ -20,10 +21,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor colorWithWhite:.8f alpha:1.0f];
-    self.window.rootViewController = [[[UINavigationController alloc] initWithRootViewController:[[[SamplePickerViewController alloc] init] autorelease]] autorelease];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //
+    UIViewController *vc0 = [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(320.0f, 3000.0f) title:@"vertical"];
+    UIViewController *vc1 = [ScrollViewController scrollViewControllerWithContentSize:CGSizeMake(3000.0f, 400) title:@"horizontal"];
+    UIViewController *vc2 = [[[TableViewController alloc] init] autorelease];
+    NSArray *samples = @[[RistrettoSampleDescriptor descriptorWithTitle:@"vertical" instance:vc0],
+                         [RistrettoSampleDescriptor descriptorWithTitle:@"horizontal" instance:vc1],
+                         [RistrettoSampleDescriptor descriptorWithTitle:@"table" instance:vc2],
+                         ];
+    RistrettoTableViewController *rootViewController = [[[RistrettoTableViewController alloc] init] autorelease];
+    rootViewController.items = samples;
+
+    //
+    self.window.rootViewController = [UINavigationController Ristretto_navigationControllerWithRootViewController:rootViewController
+                                                                                             defaultHeaderEnabled:YES];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

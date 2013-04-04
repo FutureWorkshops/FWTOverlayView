@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9213DD01704564F00C15DFA /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DCE1704564F00C15DFA /* button_back.png */; };
+		A9213DD11704564F00C15DFA /* button_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DCF1704564F00C15DFA /* button_back@2x.png */; };
+		A9213DD4170456AB00C15DFA /* icon_project.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD2170456AB00C15DFA /* icon_project.png */; };
+		A9213DD5170456AB00C15DFA /* icon_project@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9213DD3170456AB00C15DFA /* icon_project@2x.png */; };
 		A99759CF1611C48200BFB780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759CE1611C48200BFB780 /* UIKit.framework */; };
 		A99759D11611C48200BFB780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D01611C48200BFB780 /* Foundation.framework */; };
 		A99759D31611C48200BFB780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759D21611C48200BFB780 /* CoreGraphics.framework */; };
@@ -17,15 +21,21 @@
 		A99759E31611C48200BFB780 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E21611C48200BFB780 /* Default@2x.png */; };
 		A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99759E41611C48200BFB780 /* Default-568h@2x.png */; };
 		A99759EC1611C49500BFB780 /* libFWTOverlayView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759EB1611C49500BFB780 /* libFWTOverlayView.a */; };
-		A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */; };
 		A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F11611C5EC00BFB780 /* TableViewController.m */; };
 		A99759F51611C6B100BFB780 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F41611C6B100BFB780 /* OverlayView.m */; };
 		A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99759F61611C6C100BFB780 /* QuartzCore.framework */; };
 		A99759FA1611C99200BFB780 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99759F91611C99200BFB780 /* ScrollViewController.m */; };
+		A99CC589170368190070FF13 /* libRistrettoUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99CC588170368190070FF13 /* libRistrettoUI.a */; };
+		A9D14A491704859800F64866 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D14A481704859800F64866 /* icon.png */; };
+		A9D14A4B1704859E00F64866 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D14A4A1704859E00F64866 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTOverlayView_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9213DCE1704564F00C15DFA /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
+		A9213DCF1704564F00C15DFA /* button_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_back@2x.png"; sourceTree = "<group>"; };
+		A9213DD2170456AB00C15DFA /* icon_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_project.png; sourceTree = "<group>"; };
+		A9213DD3170456AB00C15DFA /* icon_project@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_project@2x.png"; sourceTree = "<group>"; };
+		A99759CA1611C48200BFB780 /* FWTOverlayView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWTOverlayView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99759CE1611C48200BFB780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A99759D01611C48200BFB780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A99759D21611C48200BFB780 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -39,8 +49,6 @@
 		A99759E21611C48200BFB780 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A99759E41611C48200BFB780 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A99759EB1611C49500BFB780 /* libFWTOverlayView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFWTOverlayView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePickerViewController.h; sourceTree = "<group>"; };
-		A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePickerViewController.m; sourceTree = "<group>"; };
 		A99759F01611C5EC00BFB780 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		A99759F11611C5EC00BFB780 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		A99759F31611C6B100BFB780 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
@@ -48,6 +56,9 @@
 		A99759F61611C6C100BFB780 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A99759F81611C99200BFB780 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		A99759F91611C99200BFB780 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		A99CC588170368190070FF13 /* libRistrettoUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRistrettoUI.a; path = "../../../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos/libRistrettoUI.a"; sourceTree = "<group>"; };
+		A9D14A481704859800F64866 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		A9D14A4A1704859E00F64866 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99CC589170368190070FF13 /* libRistrettoUI.a in Frameworks */,
 				A99759F71611C6C100BFB780 /* QuartzCore.framework in Frameworks */,
 				A99759EC1611C49500BFB780 /* libFWTOverlayView.a in Frameworks */,
 				A99759CF1611C48200BFB780 /* UIKit.framework in Frameworks */,
@@ -78,7 +90,7 @@
 		A99759CB1611C48200BFB780 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */,
+				A99759CA1611C48200BFB780 /* FWTOverlayView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +98,7 @@
 		A99759CD1611C48200BFB780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A99CC588170368190070FF13 /* libRistrettoUI.a */,
 				A99759EB1611C49500BFB780 /* libFWTOverlayView.a */,
 				A99759F61611C6C100BFB780 /* QuartzCore.framework */,
 				A99759CE1611C48200BFB780 /* UIKit.framework */,
@@ -100,8 +113,6 @@
 			children = (
 				A99759DD1611C48200BFB780 /* AppDelegate.h */,
 				A99759DE1611C48200BFB780 /* AppDelegate.m */,
-				A99759ED1611C4D800BFB780 /* SamplePickerViewController.h */,
-				A99759EE1611C4D800BFB780 /* SamplePickerViewController.m */,
 				A9975A0C1611E9D200BFB780 /* Sample */,
 				A99759D51611C48200BFB780 /* Supporting Files */,
 			);
@@ -111,10 +122,16 @@
 		A99759D51611C48200BFB780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9D14A4A1704859E00F64866 /* icon@2x.png */,
+				A9D14A481704859800F64866 /* icon.png */,
 				A99759D61611C48200BFB780 /* FWTOverlayView_Test-Info.plist */,
 				A99759D71611C48200BFB780 /* InfoPlist.strings */,
 				A99759DA1611C48200BFB780 /* main.m */,
+				A9213DD2170456AB00C15DFA /* icon_project.png */,
+				A9213DD3170456AB00C15DFA /* icon_project@2x.png */,
 				A99759DC1611C48200BFB780 /* FWTOverlayView_Test-Prefix.pch */,
+				A9213DCE1704564F00C15DFA /* button_back.png */,
+				A9213DCF1704564F00C15DFA /* button_back@2x.png */,
 				A99759E01611C48200BFB780 /* Default.png */,
 				A99759E21611C48200BFB780 /* Default@2x.png */,
 				A99759E41611C48200BFB780 /* Default-568h@2x.png */,
@@ -152,7 +169,7 @@
 			);
 			name = FWTOverlayView_Test;
 			productName = FWTOverlayView_Test;
-			productReference = A99759CA1611C48200BFB780 /* FWTOverlayView_Test.app */;
+			productReference = A99759CA1611C48200BFB780 /* FWTOverlayView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -190,6 +207,12 @@
 				A99759E11611C48200BFB780 /* Default.png in Resources */,
 				A99759E31611C48200BFB780 /* Default@2x.png in Resources */,
 				A99759E51611C48200BFB780 /* Default-568h@2x.png in Resources */,
+				A9213DD01704564F00C15DFA /* button_back.png in Resources */,
+				A9213DD11704564F00C15DFA /* button_back@2x.png in Resources */,
+				A9213DD4170456AB00C15DFA /* icon_project.png in Resources */,
+				A9213DD5170456AB00C15DFA /* icon_project@2x.png in Resources */,
+				A9D14A491704859800F64866 /* icon.png in Resources */,
+				A9D14A4B1704859E00F64866 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +225,6 @@
 			files = (
 				A99759DB1611C48200BFB780 /* main.m in Sources */,
 				A99759DF1611C48200BFB780 /* AppDelegate.m in Sources */,
-				A99759EF1611C4D800BFB780 /* SamplePickerViewController.m in Sources */,
 				A99759F21611C5EC00BFB780 /* TableViewController.m in Sources */,
 				A99759F51611C6B100BFB780 /* OverlayView.m in Sources */,
 				A99759FA1611C99200BFB780 /* ScrollViewController.m in Sources */,
@@ -244,8 +266,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"",
+					"\"$(SRCROOT)/../RistrettoUI/RistrettoUI/\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -266,7 +292,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../FWTOverlayView/FWTOverlayView/\"",
+					"\"$(SRCROOT)/../RistrettoUI/RistrettoUI/\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
@@ -286,8 +315,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/FWTOverlayView-cbvhtayqnzktrdfgrbpnxliwwczl/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FWTOverlayView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -302,8 +332,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/FWTOverlayView-cbvhtayqnzktrdfgrbpnxliwwczl/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FWTOverlayView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

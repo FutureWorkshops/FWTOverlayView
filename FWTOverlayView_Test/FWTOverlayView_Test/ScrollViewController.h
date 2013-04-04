@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Marco Meschini. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RistrettoViewController.h"
 
-@interface ScrollViewController : UIViewController
+@interface ScrollViewController : RistrettoViewController
 
 + (id)scrollViewControllerWithContentSize:(CGSize)contentSize title:(NSString *)title;
 
