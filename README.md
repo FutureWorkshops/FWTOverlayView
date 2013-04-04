@@ -1,6 +1,6 @@
 #FWTOverlayView
 
-![FWTOverlayView screenshot](http://grab.by/ige8)
+![FWTOverlayView screenshot](http://grab.by/lkv6)
 
 FWTOverlayView extends scrollview and make it easy to add a floating overlay view. The overlay view hovers through your scrollview frame and helps tracking the current offset.
 This component is inspired by Path app and tries to expose a generic and flexible interface.
